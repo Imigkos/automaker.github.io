@@ -3,58 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Maker | Professional Repair Shop</title>
+    <title>Auto Maker | Φανοποιία και Βαφές</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: '#E11D48', // Professional Automotive Red
-                        dark: '#0f172a',  // Deep Blue/Grey 
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        /* Smooth scrolling for the whole page */
-        html { scroll-behavior: smooth; }
-        
-        /* Simple zoom effect on gallery images */
-        .gallery-item { overflow: hidden; border-radius: 0.5rem; }
-        .gallery-item img { transition: transform 0.3s ease; width: 100%; height: 100%; object-fit: cover; }
-        .gallery-item:hover img { transform: scale(1.05); }
-    </style>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
 </head>
 <body class="bg-gray-50 text-slate-800 font-sans">
 
     <nav class="bg-dark text-white sticky top-0 z-50 shadow-lg">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider uppercase">
-                <i class="fa-solid fa-wrench text-brand mr-2"></i> Auto Maker
+            <div class="text-2xl font-bold tracking-wider uppercase flex items-center">
+                <img src="logo.png" alt="Auto Maker Logo" class="h-12 mr-4"> 
+                Auto Maker
             </div>
             <div class="space-x-6 text-sm font-medium">
-                <a href="#work" class="hover:text-brand transition">Our Work</a>
-                <a href="#contact" class="hover:text-brand transition">Contact</a>
+                <a href="#work" class="hover:text-brand transition">Φωτογραφίες</a>
+                <a href="#contact" class="hover:text-brand transition">Επικοινωνία</a>
             </div>
         </div>
     </nav>
 
     <header class="relative bg-dark text-white py-24 text-center">
-        <div class="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 opacity-30 bg-[url('shopfront1.jpg')] bg-cover bg-center"></div>
         
         <div class="relative z-10 max-w-3xl mx-auto px-4">
             <h1 class="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
-                Expert Mechanics.<br>Trusted Service.
+                Φανοποιία Βαφές και Καλύμπρα<br>Γρηγόρης Μίγκος
             </h1>
             <p class="text-xl text-gray-300 mb-8 font-light">
-                Professional automotive repair & maintenance. We treat your car like our own.
+                Εμπειρία στο χώρο απο το 1985. Αναλαμβάνουμε και ασφαλιστικές
             </p>
             <a href="tel:+1234567890" class="inline-block bg-brand hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full transition shadow-lg text-lg">
                 <i class="fa-solid fa-phone mr-2"></i> Call Us Now
@@ -62,54 +44,113 @@
         </div>
     </header>
 
+<section class="py-16 bg-white" id="comparison-slider">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-dark uppercase tracking-wide">ΠΡΙΝ ΚΑΙ ΜΕΤΑ</h2>
+                <div class="w-24 h-1 bg-brand mx-auto mt-4"></div>
+                <p class="text-gray-500 mt-4">Σύρετε τη μπάρα για να δείτε τη διαφορά.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="container relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl" style="--position: 50%;">
+                    
+                    <div class="image-after absolute inset-0 w-full h-full">
+                        <img src="after1.jpg" alt="Μετά" class="slider-image">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded shadow z-20">ΜΕΤΑ</div>
+                    </div>
+
+                    <div class="image-before">
+                        <img src="before1.jpg" alt="Πριν" class="slider-image">
+                        <div class="absolute top-4 left-4 bg-gray-800 text-white text-xs font-bold px-2 py-1 rounded shadow z-20">ΠΡΙΝ</div>
+                    </div>
+
+                    <div class="slider-handle">
+                        <div class="handle-line"></div>
+                        <div class="handle-circle">
+                            <i class="fa-solid fa-arrows-left-right text-white text-xs"></i>
+                        </div>
+                    </div>
+
+                    <input type="range" min="0" max="100" value="50" class="slider">
+                </div>
+
+
+                <div class="container relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl" style="--position: 50%;">
+                    
+                    <div class="image-after absolute inset-0 w-full h-full">
+                        <img src="after2.jpg" alt="Μετά" class="slider-image">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded shadow z-20">ΜΕΤΑ</div>
+                    </div>
+
+                    <div class="image-before">
+                        <img src="before2.jpg" alt="Πριν" class="slider-image">
+                        <div class="absolute top-4 left-4 bg-gray-800 text-white text-xs font-bold px-2 py-1 rounded shadow z-20">ΠΡΙΝ</div>
+                    </div>
+
+                    <div class="slider-handle">
+                        <div class="handle-line"></div>
+                        <div class="handle-circle">
+                            <i class="fa-solid fa-arrows-left-right text-white text-xs"></i>
+                        </div>
+                    </div>
+
+                    <input type="range" min="0" max="100" value="50" class="slider">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section id="work" class="py-20 max-w-6xl mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-dark uppercase tracking-wide">Our Work</h2>
+            <h2 class="text-3xl font-bold text-dark uppercase tracking-wide">ΦΩΤΟΓΡΑΦΙΕΣ</h2>
             <div class="w-24 h-1 bg-brand mx-auto mt-4"></div>
-            <p class="text-gray-500 mt-4">Recent repairs, restorations, and happy engines.</p>
+            <p class="text-gray-500 mt-4"></p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="https://images.unsplash.com/photo-1597762470488-387751f538c6?q=80&w=800&auto=format&fit=crop" alt="Engine Work">
+                <img src="photo1.JPG" alt="Engine Work">
                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Engine Repair</span>
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
                 </div>
             </div>
 
             <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=800&auto=format&fit=crop" alt="Car Lift">
+                <img src="photo2.JPG" alt="Car Lift">
                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Undercarriage</span>
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
                 </div>
             </div>
 
             <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?q=80&w=800&auto=format&fit=crop" alt="Detailing">
+                <img src="photo3.JPG" alt="Detailing">
                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Detailing</span>
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
                 </div>
             </div>
 
             <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop" alt="Brakes">
+                <img src="photo4.JPG" alt="Brakes">
                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Brake Service</span>
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
                 </div>
             </div>
 
             <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?q=80&w=800&auto=format&fit=crop" alt="Oil Change">
+                <img src="photo5.JPG" alt="Oil Change">
                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Oil Changes</span>
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
                 </div>
             </div>
 
             <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="https://images.unsplash.com/photo-1530046339160-7188dd2338e2?q=80&w=800&auto=format&fit=crop" alt="Tires">
+                <img src="photo6.JPG" alt="Tires">
                 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold">Tire Rotation</span>
+                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
                 </div>
             </div>
 
@@ -118,40 +159,46 @@
 
     <section id="contact" class="bg-gray-100 py-20 border-t border-gray-200">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-dark mb-10 uppercase">Contact Us</h2>
+            <h2 class="text-3xl font-bold text-dark mb-10 uppercase">Επικοινωνια</h2>
             
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
                     <div class="text-brand text-4xl mb-4"><i class="fa-solid fa-phone"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Call Us</h3>
-                    <p class="text-gray-600 mb-4">Monday - Friday: 8am - 6pm</p>
-                    <a href="tel:+1234567890" class="text-2xl font-bold text-dark hover:text-brand transition block">
-                        (555) 123-4567
+                    <h3 class="text-xl font-bold mb-2">Τηλέφωνα</h3>
+                    <p class="text-gray-600 mb-4">Δευτέρα - Παρασκευή: 8:00π.μ - 6:00μ.μ</p>
+                    <p class="text-gray-600 mb-4">Σάββατο: 8:00π.μ - 2:00μ.μ</p>
+                    <a href="tel:2105757330" class="text-2xl font-bold text-dark hover:text-brand transition block">
+                        2105757330
                     </a>
-                    <a href="tel:+1987654321" class="text-lg text-gray-500 hover:text-brand transition block mt-2">
-                        (555) 987-6543
+                    <a href="tel:+306945022462" class="text-lg text-gray-500 hover:text-brand transition block mt-2">
+                        6945022462
                     </a>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
                     <div class="text-brand text-4xl mb-4"><i class="fa-solid fa-envelope"></i></div>
-                    <h3 class="text-xl font-bold mb-2">Email Us</h3>
-                    <p class="text-gray-600 mb-4">Send us photos of the issue</p>
-                    <a href="mailto:repair@automaker.com" class="text-xl font-bold text-dark hover:text-brand transition">
-                        repair@automaker.com
+                    <h3 class="text-xl font-bold mb-2">Email</h3>
+                    <p class="text-gray-600 mb-4"></p>
+                    <a href="mailto:grmigos@yahoo.com" class="text-xl font-bold text-dark hover:text-brand transition">
+                        grmigos@yahoo.com
                     </a>
                 </div>
             </div>
 
             <div class="mt-12 text-gray-500">
-                <p class="text-lg"><i class="fa-solid fa-location-dot mr-2"></i> 123 Mechanic Street, Auto City, AC 54321</p>
+                <p class="text-lg"><i class="fa-solid fa-location-dot mr-2"></i>Παλαιάς Καβάλας 258, Περιστέρι 12136</p>
             </div>
         </div>
     </section>
 
     <footer class="bg-dark text-gray-400 py-8 text-center text-sm">
-        <p>&copy; 2024 Auto Maker. All rights reserved.</p>
+        <p>&copy; 2025 Auto Maker. Γρηγόριος Μίγκος.</p>
     </footer>
+
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-95 flex items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
+        <div class="absolute top-5 right-8 text-white text-5xl font-bold">&times;</div>
+        <img id="modalImage" class="max-h-[90vh] max-w-full rounded shadow-2xl transition-transform duration-300" src="" alt="Full View">
+    </div>
 
 </body>
 </html>

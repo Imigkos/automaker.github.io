@@ -1,0 +1,113 @@
+/* --------------------
+   GLOBAL SETTINGS
+   -------------------- */
+html { scroll-behavior: smooth; }
+
+/* --------------------
+   SLIDER LOGIC (From your screenshot)
+   -------------------- */
+.container {
+    /* Define the variable here so it exists */
+    --position: 50%;
+}
+
+.image-before {
+    position: absolute;
+    inset: 0;
+    /* This width is controlled by the JS slider value */
+    width: var(--position);
+    overflow: hidden; 
+    z-index: 10;
+}
+
+/* THE MAGIC TRICK:
+   By setting object-position: left, the image stays anchored
+   to the left side even as the container (image-before) shrinks.
+   This prevents squishing!
+*/
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+
+    /* --- ADD THESE LINES --- */
+    pointer-events: none; /* Ignore clicks on image, let them hit the input */
+    user-select: none;    /* Prevent blue highlighting */
+    -webkit-user-drag: none; /* Prevent ghost image dragging */
+}
+
+/* Slider Handle (The Line) */
+.slider-handle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Let clicks pass through to the input */
+    z-index: 20;
+}
+
+.handle-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--position); /* Moves with the variable */
+    width: 2px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transform: translateX(-50%);
+}
+
+.handle-circle {
+    position: absolute;
+    top: 50%;
+    left: var(--position); /* Moves with the variable */
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    background-color: #D10000; /* Brand Color */
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Invisible Range Input (The Logic Controller) */
+.slider {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Make it invisible */
+    cursor: col-resize;
+    z-index: 30; /* Sit on top of everything */
+
+    /* --- ADD THESE LINES --- */
+    -webkit-appearance: none; /* Removes default thin track styling */
+    appearance: none;
+    margin: 0; /* Safety: prevents browser margin offsets */
+    touch-action: pan-y; /* Allows vertical scroll but captures horizontal drag */
+}
+
+/* This ensures the 'thumb' (the handle logic) is treated as full height */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; /* Arbitrary width, doesn't matter visually */
+    height: 100vh; /* Make the hit-area massive vertically */
+    cursor: col-resize;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 100vh;
+    cursor: col-resize;
+}
+
+/* --------------------
+   GALLERY ZOOM
+   -------------------- */
+.gallery-item { overflow: hidden; border-radius: 0.5rem; }
+.gallery-item img { transition: transform 0.3s ease; width: 100%; height: 100%; object-fit: cover; }
+.gallery-item:hover img { transform: scale(1.05); }
