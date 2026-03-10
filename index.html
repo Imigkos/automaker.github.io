@@ -104,57 +104,24 @@
         </div>
     </section>
 
-    <section id="work" class="py-20 max-w-6xl mx-auto px-4">
+<section id="work" class="py-20 max-w-6xl mx-auto px-4 overflow-hidden">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold text-dark uppercase tracking-wide">ΦΩΤΟΓΡΑΦΙΕΣ</h2>
             <div class="w-24 h-1 bg-brand mx-auto mt-4"></div>
-            <p class="text-gray-500 mt-4"></p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="photo1.JPG" alt="Engine Work">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
-                </div>
+        <div class="relative group">
+            <div class="overflow-hidden mx-auto">
+                <div id="gallery-track" class="flex transition-transform duration-500 ease-in-out">
+                    </div>
             </div>
 
-            <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="photo2.JPG" alt="Car Lift">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
-                </div>
-            </div>
-
-            <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="photo3.JPG" alt="Detailing">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
-                </div>
-            </div>
-
-            <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="photo4.JPG" alt="Brakes">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
-                </div>
-            </div>
-
-            <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="photo5.JPG" alt="Oil Change">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
-                </div>
-            </div>
-
-            <div class="gallery-item h-64 shadow-md cursor-pointer group relative">
-                <img src="photo6.JPG" alt="Tires">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300 flex items-center justify-center">
-                    <span class="text-white opacity-0 group-hover:opacity-100 font-bold"></span>
-                </div>
-            </div>
-
+            <button onclick="moveSlide(-1)" class="absolute -left-4 top-1/2 -translate-y-1/2 bg-dark hover:bg-brand text-white w-10 h-10 md:w-12 md:h-12 rounded-full shadow-lg transition flex items-center justify-center z-10">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button onclick="moveSlide(1)" class="absolute -right-4 top-1/2 -translate-y-1/2 bg-dark hover:bg-brand text-white w-10 h-10 md:w-12 md:h-12 rounded-full shadow-lg transition flex items-center justify-center z-10">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
     </section>
 
@@ -186,14 +153,20 @@
                 </div>
             </div>
 
-            <div class="mt-12 text-gray-500">
-                <p class="text-lg"><i class="fa-solid fa-location-dot mr-2"></i>Παλαιάς Καβάλας 258, Περιστέρι 12136</p>
-            </div>
+<div class="mt-12">
+    <a href="https://www.google.com/maps/place/AUTO+MAKER+-+%CE%93%CE%A1%CE%97%CE%93%CE%9F%CE%A1%CE%97%CE%A3+%CE%9C%CE%99%CE%93%CE%9A%CE%9F%CE%A3/@38.0072649,23.673461,18z/data=!3m1!4b1!4m6!3m5!1s0x14a1a38e207d7b11:0xa3131b1b13c088a!8m2!3d38.0072636!4d23.6742265!16s%2Fg%2F11gr3tzhlh?entry=ttu&g_ep=EgoyMDI2MDMwNS4wIKXMDSoASAFQAw%3D%3D" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="text-lg text-gray-500 hover:text-brand transition inline-flex items-center cursor-pointer">
+        <i class="fa-solid fa-location-dot mr-2 text-dark"></i>
+        Παλαιάς Καβάλας 258, Περιστέρι 12136
+    </a>
+</div>
         </div>
     </section>
 
     <footer class="bg-dark text-gray-400 py-8 text-center text-sm">
-        <p>&copy; 2025 Auto Maker. Γρηγόριος Μίγκος.</p>
+        <p>&copy; 2026 Auto Maker. Γρηγόριος Μίγκος.</p>
     </footer>
 
     <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-95 flex items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
