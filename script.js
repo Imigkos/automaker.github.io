@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Select all elements with the class 'container'
     const containers = document.querySelectorAll('.container');
 
-    // Check if we actually found them (Debugging)
-    console.log("Found containers:", containers.length); 
 
     containers.forEach(container => {
         const slider = container.querySelector('.slider');
@@ -130,10 +128,11 @@ function initGallery() {
 
 function updateSlider() {
     const track = document.getElementById('gallery-track');
+    if (!track) return;
     const totalSlides = galleryImages.length;
     
     // Stop the slider from scrolling into empty space
-    const maxSlide = totalSlides - slidesVisible;
+    const maxSlide = Math.max(0, totalSlides - slidesVisible);
     if (currentSlide > maxSlide) currentSlide = maxSlide;
     if (currentSlide < 0) currentSlide = 0;
 
@@ -144,7 +143,7 @@ function updateSlider() {
 
 function moveSlide(direction) {
     const totalSlides = galleryImages.length;
-    const maxSlide = totalSlides - slidesVisible;
+    const maxSlide = Math.max(0, totalSlides - slidesVisible);
     
     currentSlide += direction;
     
@@ -160,6 +159,7 @@ function moveSlide(direction) {
 }
 
 function startAutoPlay() {
+    clearInterval(slideInterval);
     slideInterval = setInterval(() => moveSlide(1), 4000); // Changes every 4 seconds automatically
 }
 
