@@ -1,0 +1,22 @@
+{
+  "name": "auto-maker-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static Greek-language automotive bodywork and painting website.",
+  "scripts": {
+    "build": "tailwindcss -i styles/site.css -o assets/site.css --minify",
+    "test": "node --test",
+    "check": "node --check script.js && node --check scripts/gallery.js && node --check scripts/modal.js && node --check scripts/comparisons.js && node --check scripts/gallery-images.js",
+    "format": "prettier --write index.html script.js \"scripts/**/*.js\" \"styles/**/*.css\" \"tests/**/*.js\" \"*.cjs\" \"*.json\" README.md .github/workflows/checks.yml",
+    "format:check": "prettier --check index.html script.js \"scripts/**/*.js\" \"styles/**/*.css\" \"tests/**/*.js\" \"*.cjs\" \"*.json\" README.md .github/workflows/checks.yml"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "prettier": "3.4.2",
+    "tailwindcss": "3.4.17"
+  }
+}

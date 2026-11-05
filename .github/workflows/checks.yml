@@ -11,7 +11,12 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-      - name: Check JavaScript and gallery behavior
+      - name: Install pinned development dependencies
+        run: npm ci --ignore-scripts
+      - name: Validate source, build and behavior
         run: |
-          node --check script.js
-          node --test tests/gallery.test.cjs
+          npm run format:check
+          npm run check
+          npm run build
+          npm test
+          git diff --exit-code -- assets/site.css
